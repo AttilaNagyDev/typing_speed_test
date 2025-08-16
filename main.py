@@ -1,7 +1,10 @@
 from tkinter import *
+import random
+from practice_texts import practice_texts
 
 GREY = "#5C6672"
 FONT = ("Arial", 14)
+PRACTICE_TEXT_FONT = ("Arial", 24)
 
 
 # ---------------------------------------------- CENTER WINDOW ON SCREEN -----------------------------------------------
@@ -20,11 +23,29 @@ def center_window(window, width, height):
     window.geometry('%dx%d+%d+%d' % (width, height, x, y))
 
 
+# ------------------------------------------------- TYPING SPEED TEST --------------------------------------------------
+def refresh_text():
+    """Refreshes test practice text"""
+    practice_text = practice_texts[random.randint(0, len(practice_texts)-1)]
+    practice_text_label.config(text=practice_text)
+
+
 # ------------------------------------------------------ UI SETUP ------------------------------------------------------
 app = Tk()
 app.title("Typing Speed Test")
-app.config(padx=25, pady=35, bg=GREY, width=800, height=400)
+app.config(padx=15, pady=25, bg=GREY, width=800, height=400)
 app.resizable(width=False, height=False)
 center_window(app, 800, 400)
+
+# Practice Text Field
+practice_text_label = Label(text="ttjfujfyu", font=PRACTICE_TEXT_FONT, background=GREY, foreground="white")
+refresh_text()
+practice_text_label.place(x=340, y=40, anchor='center')
+practice_text_textfield = Text(bg="white", fg="black", font=PRACTICE_TEXT_FONT, takefocus=True)
+practice_text_textfield.place(x=0, y=200, anchor='w', width=770, height=150)
+
+# Refresh Text Button
+refresh_text_button = Button(text="Refresh Text", command=refresh_text, font=FONT, highlightbackground=GREY)
+refresh_text_button.place(x=0, y=300, anchor='w', width=150)
 
 app.mainloop()
