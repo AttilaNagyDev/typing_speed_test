@@ -23,11 +23,11 @@ def center_window(window, width, height):
     screen_height = window.winfo_screenheight()
 
     # Calculate position X and Y coordinates
-    x = (screen_width/2) - (width/2)
-    y = (screen_height/2) - (height/2)
+    x = (screen_width - width) // 2
+    y = (screen_height - height) // 2
 
     # Set window size and its position
-    window.geometry('%dx%d+%d+%d' % (width, height, x, y))
+    window.geometry(f"{width}x{height}+{x}+{y}")
 
 
 # ------------------------------------------------- TYPING SPEED TEST --------------------------------------------------
@@ -35,7 +35,7 @@ def refresh_text():
     """Refreshes test practice text and clears textarea"""
     global practice_text, start_time
 
-    practice_text = practice_texts[random.randint(0, len(practice_texts)-1)]
+    practice_text = random.choice(practice_texts)
     practice_text_label.config(text=practice_text)
     practice_text_textfield.delete(1.0, END)
     results_label.config(text="")
@@ -57,11 +57,8 @@ def finish():
     # Check typing accuracy
     typed_words = practice_text_textfield.get(1.0, END).split()
     practice_words = practice_text.split()
-    if len(practice_words) == 0:
-        accuracy = 0
-    else:
-        correct_words = sum(1 for a, b in zip(typed_words, practice_words) if a == b)
-        accuracy = (correct_words / len(practice_words)) * 100
+    correct_words = sum(1 for a, b in zip(typed_words, practice_words) if a == b)
+    accuracy = (correct_words / len(practice_words)) * 100
 
     # Work out the writing time and format it to display
     writing_time = None
@@ -72,14 +69,10 @@ def finish():
     if writing_time is not None:
 
         if writing_time > 60:
-            minutes, seconds = divmod(writing_time, 60)
-            minutes = round(minutes)
-            seconds = round(seconds)
-            if seconds < 10:
-                seconds = "0" + str(seconds)
-            results_label.config(text=f"Finished in {minutes}:{seconds} / Accuracy: {round(accuracy, 1)} %")
+            mins, secs = divmod(writing_time, 60)
+            results_label.config(text=f"Finished in {int(mins)}:{int(secs):02d} / Accuracy: {accuracy:.1f} %")
         else:
-            results_label.config(text=f"Finished in {round(writing_time)} seconds / Accuracy: {round(accuracy, 1)} % ")
+            results_label.config(text=f"Finished in {round(writing_time)} seconds / Accuracy: {accuracy:.1f} % ")
 
 
 # ------------------------------------------------------ UI SETUP ------------------------------------------------------
