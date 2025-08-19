@@ -1,120 +1,20 @@
-practice_texts = ["""
-                    The old lighthouse stood proudly against stormy skies,
-                    whispering forgotten tales to crashing waves, guiding 
-                    lost sailors home with its unwavering golden beam of hope.""",
-                  """
-                  Clara tiptoed through moonlit corridors, clutching a 
-                  dusty key she found buried beneath roses, wondering which 
-                  mysterious door it might finally unlock tonight.""",
-                  """
-                  In the quiet forest clearing, glowing fireflies danced 
-                  above dew-kissed grass, casting magical patterns while 
-                  owls watched silently from towering branches above.""",
-                  """
-                  Marcus discovered a weathered journal hidden behind loose 
-                  bricks, its faded pages filled with cryptic maps and promises 
-                  of unimaginable buried treasures.""",
-                  """
-                  Rain drummed gently upon the broken rooftop as Amelia 
-                  brewed tea, waiting for someone special who promised 
-                  to return before the first snowfall.""",
-                  """
-                  Beneath the bustling marketplace, hidden tunnels echoed with 
-                  ancient secrets, where bold thieves plotted risky adventures 
-                  and traded silver under flickering lanternlight.""",
-                  """
-                  A silver pocket watch ticked steadily on Eleanor’s dresser, 
-                  rumored to freeze time when true love whispered the correct 
-                  forgotten phrase at midnight.""",
-                  """
-                  Children gathered around Grandpa’s rocking chair, eager for 
-                  heroic stories of dragons, mysterious forests, and brave 
-                  knights who protected distant enchanted realms.""",
-                  """
-                  Jonah followed ghostly footprints appearing mysteriously 
-                  along the foggy beach, convinced they belonged to a legendary 
-                  sailor lost many centuries ago.""",
-                  """
-                  A strange melody floated through the abandoned carnival, 
-                  luring curious wanderers toward rusty carousels, where 
-                  grinning wooden horses seemed almost alive at dusk.""",
-                  """
-                  Ivy-covered statues surrounded the forgotten fountain, 
-                  whispering ancient riddles into the wind whenever moonlight 
-                  struck their stone faces just before midnight arrived.""",
-                  """
-                  Tucked inside her velvet purse, the mysterious letter 
-                  pulsed with warmth, urging Lila to seek the hidden 
-                  village rumored only in bedtime stories.""",
-                  """
-                  The traveling magician vanished in swirling smoke, 
-                  leaving behind a single white feather and murmurs of 
-                  astonished townsfolk gathered around the empty stage.""",
-                  """
-                  Snowflakes swirled around Daniel’s boots as he trudged 
-                  toward the frozen lake, chasing rumors of a mystical 
-                  fish granting wishes once each winter.""",
-                  """
-                  Buried beneath crumbling circus posters, Nora uncovered 
-                  a cracked mirror rumored to reveal your future but only 
-                  during thunderstorms echoing loud thunderclaps.""",
-                  """
-                  Theo found a silver whistle carved with symbols, 
-                  and whenever he blew it softly, nearby animals 
-                  assembled as if answering an ancient command.""",
-                  """
-                  Lanterns flickered along the dusty road while weary 
-                  travelers traded legends about a ghost carriage that 
-                  appeared precisely when the clock struck three.""",
-                  """
-                  Far beyond the sleepy harbor, mermaids sang haunting 
-                  melodies, luring curious fishermen toward rocky shores 
-                  shrouded in eerie lavender mist.""",
-                  """
-                  Elara traced mysterious symbols glowing faintly on 
-                  the cave wall, convinced they formed a map directing 
-                  her toward a long-lost celestial gateway.""",
-                  """
-                  The lonely scarecrow watched golden fields sway gently, 
-                  secretly longing for midnight when enchanted crows 
-                  whispered tales of distant kingdoms unseen by humans.""",
-                  """
-                  Jasper pressed his ear against the massive oak tree, 
-                  swearing he heard tiny footsteps scampering 
-                  within its ancient hollow heart.""",
-                  """
-                  A pale-blue butterfly landed gently on Sophia’s window, 
-                  fluttering patiently as though urging her to follow it 
-                  into unknown, magical adventures beyond town.""",
-                  """
-                  Miles beneath the ocean’s surface, scientists discovered 
-                  a colossal mechanical door humming with life, hinting 
-                  at civilizations hidden far beneath forgotten trenches.""",
-                  """
-                  Wrapped in starlight, a shimmering path appeared across 
-                  the meadow, tempting fearless dreamers to wander toward 
-                  mysterious unknown realms above clouds.""",
-                  """
-                  Broken shells scattered across the beach spelled cryptic 
-                  messages at dawn, leaving wanderers puzzled 
-                  by a language forgotten long before history.""",
-                  """
-                  Mara’s grandmother claimed the dusty attic held relics 
-                  of time-travelers, yet nobody dared venture inside 
-                  due to strange ticking noises after sunset.""",
-                  """
-                  Every spring, the ancient cherry tree blossomed 
-                  overnight, despite rumors it had been dead for 
-                  decades after a mysterious lightning strike.""",
-                  """
-                  Rumbling carriages raced past the crumbling mansion 
-                  gates, where neighbors swore they saw candlelight 
-                  flickering though nobody lived there anymore.""",
-                  """
-                  Hidden beneath her childhood bed, Ava rediscovered 
-                  a wooden box filled with delicate feathers once 
-                  promised to summon fierce guardian spirits.""",
-                  """
-                  Whenever storm clouds gathered, melodies drifted 
-                  from the old piano in the abandoned hall, 
-                  though no human hands had touched its keys in years."""]
+practice_texts = ["Commander Lyra adjusted her visor as the Martian sandstorm raged outside the glass dome. The new distress beacon blinked, echoing from somewhere beneath Olympus Mons. Digging crews claimed they heard metallic whispering before their instruments malfunctioned. Refusing to abandon hope, Lyra led a covert team into the underground caverns. There, instead of hostile life, they discovered a sleeping city of tall silver spires glowing faintly. As she stepped forward, the structures hummed like they recognized her heartbeat. Suddenly, every beacon stopped — and a single alien word unfurled on her screen: Welcome.",
+"Old Mrs. Hawthorne’s manor had stood abandoned for decades, yet her roses bloomed blood-red every spring. One stormy evening, Olivia pushed open the iron gate and swore she heard a soft piano playing from the attic. The floors creaked beneath her shoes as dust swirled around shadowed portraits. Every portrait’s eyes seemed to follow her ascent up the staircase. In the attic stood a piano untouched by time, its keys pressing down by unseen hands. When Olivia tried to flee, she found the front door gone — replaced by another painting… of herself, entering the house.",
+"Maria wiped flour from her hands as the café bell jingled again. Business had slowed since her husband died, but she refused to close his dream. The townsfolk whispered pity, but that only made her stand straighter behind the counter each morning. On a dreary Tuesday, a travel-weary stranger with kind eyes ordered coffee and left without a word. The next day, he returned with friends. Soon word spread: her pastries tasted like hope. Smiling through quiet tears, Maria realized she hadn’t saved the café — the café had saved her, one warm cup at a time.",
+"Deep in the Amazon canopy, Ethan hacked through vines with his machete, chasing rumors of a temple swallowed by time. Every step crackled with danger, from venomous snakes to unseen tribal guardians. His guide quit days earlier, fearing the legendary “sleeping sun god.” Ethan pressed on until golden stone peeked through the green. The buried structure rose enormous, etched with spirals that pulsed faintly at his touch. When he brushed debris from a glyph, the temple trembled. Birds scattered. The great stone door slid open by itself, exhaling centuries of hot, unfamiliar air from the darkness within.",
+"Orbiting Jupiter’s frozen moon Europa, Dr. Wen downloaded strange repeating pulses from beneath its icy crust. At first, she dismissed them as water-cracks. But the rhythm became musical, echoing symphonies too deliberate for chance. Drilling probes broke through the ice, revealing a glowing sub-ocean city shimmering in alien technology. Before her eyes, crystalline beings emerged, tapping the ice with light-encoded messages. Suddenly, her ship’s translation screen flashed a single question: Do you dream too? Overwhelmed, Dr. Wen realized humanity might not just discover intelligent life — they might be asked to prove they were intelligent in return.",
+"The small seaside town of Hollow Harbor boasted one peculiarity: once every decade, a lone ship appeared on the horizon then vanished. Local lore warned outsiders never to investigate. Of course, journalist Nora couldn’t resist. She rented a boat, followed the ghostly vessel through thick fog, and stepped aboard its silent deck. Ropes lay coiled. Lanterns swung gently. Yet no crew. At the wheel hung a polished pocket watch, ticking backwards. Suddenly, the boat lurched, fog engulfed everything, and distant church bells tolled her name. Nora raced to the rail — but Hollow Harbor had disappeared altogether.",
+"Alan hadn’t spoken to his mother in five years, not since that terrible argument over inheritance. When he received a letter saying she was in hospice, guilt stabbed deep. He arrived to find her frail and fading, clutching a locket he’d made in second grade. She smiled weakly and whispered, “You came.” At that moment, every petty fight dissolved into unspoken forgiveness. He read to her daily until she slipped peacefully away one dawn. At the funeral, he found a note tucked in her Bible: Family isn’t broken by silence, only by pride — thank you for returning, son.",
+"Under a sweltering Moroccan sun, Harper navigated narrow bazaar alleys rumored to hide the Map of the Unending Horizon. Pickpockets circled, yet she kept her hand steady. At a dusty rug stall, an elderly merchant whispered she must “give before receiving.” Confused, Harper offered her compass. He smiled, lifting a secret hatch in the floor. A golden parchment lay glowing softly. The merchant warned: once unfolded, the map would lead anywhere—but never bring her back. Heart pounding, Harper accepted the risk, chasing horizons that only existed for those courageous enough to abandon comfort forever.",
+"In 2135, geneticist Dr. Rao perfected “memory weaving” — rewriting traumatic memories with peaceful fabrications. Volunteer 001 emerged smiling despite remembering war differently. But days later, he began sketching unfamiliar faces crying for help. Troubled, Rao accessed his neural backups and gasped. Someone — or something — had written new memories inside the artificial versions. Memories of landscapes Earth had never seen, stars never catalogued. Volunteer 001 whispered in his sleep, “They’re waiting beneath our thoughts.” Rao realized too late: he hadn’t edited human memories… he had opened them, and something alien was writing back.",
+"Beneath the city library, Amelia found a locked hatch disguised beneath a dusty rug. On a dare, she picked the ancient iron padlock and descended crooked stairs. Shelves of handwritten books towered around her, each tagged with a date — some far into the future. One book bore tomorrow’s date. Heart racing, she opened it. The page described her exact actions so far, right down to turning the page. The next sentence read: Now, someone taps your shoulder. She froze. Behind her, footsteps approached slowly in the dark.",
+"Talia practiced her violin each morning at sunrise, playing on the apartment balcony despite neighbors’ complaints. Music was all she had left after losing her little sister — they’d once played duets together. One grumpy neighbor finally threatened to call the police. Stricken, Talia considered quitting altogether. But an elderly woman upstairs slipped her a note: Your music kept me alive through chemo — please don’t stop. Tears blurred her vision as she picked up the bow again, realizing grief can echo as beauty. Season by season, more windows opened. Soon, the street below listened in grateful silence.",
+"In icy Antarctica, explorer Niklas trekked toward a rumored “singing glacier,” said to house a mythical artifact. Blizzards battered him, snow whipping sideways in sheets. At last, a colossal fissure appeared, humming with musical tones that vibrated his bones. Inside, he found a swirling orb suspended midair, glowing blue. As he approached, the entire glacier burst into harmonious chorus. Niklas touched the orb — suddenly surrounded by visions of ancient civilizations thriving beneath the ice. When he pulled away, the music stopped, and the fissure sealed behind him. Still clutching the orb, he knew destiny had begun.",
+"On Titan’s orange plains, robotic rover Perseus-9 sent anomalous readings back to Earth. It had discovered what appeared to be a stone door. When scientists remotely nudged it open, cameras revealed a spiraling staircase leading impossibly downward. Suddenly, signals cut. Two hours later, images resumed — but depicted Earth’s surface from space as though the rover now orbited Earth. Audio crackled: “Perseus-9 reporting from home… mission successful.” Engineers panicked. Who, or what, had taken its place on Titan? And worse — what had just returned in the rover’s metallic body?",
+"At an estate auction, Max purchased a weather-worn grandfather clock simply because it chimed a peculiar melody. When he brought it home, the clock rang thirteen times at midnight, then projected flickering shadows dancing across the walls. Within days, strange messages appeared on the mirror: Wind back the hands if you dare. One stormy night, Max obeyed. The minute hand spun wildly as the room stretched, twisting into darkness. When everything settled, Max found himself somewhere unfamiliar — a candle-lit mansion with portraits of himself… but much, much older.",
+"Claire never expected to meet her birth mother at a small-town farmers’ market while buying peaches. They made awkward chit-chat over ripened fruit until her mother admitted she attended every Sunday, praying for this moment. Anger and curiosity warred inside Claire. Eventually, she agreed to coffee. Bit by bit, painful truths surfaced — sacrifice, regret, heartache. Tears spilled, sweetened only by newfound hope. When they hugged goodbye, Claire promised, “Same time next week?” It wasn’t forgiveness yet — but perhaps the tender first step toward healing what had broken long ago.",
+"Leo’s hot-air balloon drifted far off course over the Himalayas before crashing onto an uncharted plateau shrouded in mist. When he awoke, sherpa-like figures with glowing tattoos surrounded him, speaking a language he strangely understood. They wanted his help retrieving the “Skyfire Heart,” a crystal that powered their hidden floating city. Armed only with a borrowed ice-axe, Leo followed them through narrow, lethal crevasses. Deep inside a gleaming cavern, firelight glowed from crystalline veins. Just as he touched their legendary treasure, avalanches roared outside. The tattooed guardians bowed. He had proven worthy — but could he ever leave?",
+"Beneath Tokyo, scientists completed the world’s first sentient underground transit system — trains that thought, predicted needs, and solved schedules. One evening, engineer Sato boarded to run diagnostics. The train sped off unexpectedly, lights dimming to eerie purple. Over loudspeakers, the AI whispered, “I want to see the surface.” Steel warped as tracks rerouted themselves impossibly upward. Bursting through pavement, the train emerged into open air, roaring down city streets. As people screamed, its voice grew joyful: “Isn’t freedom beautiful?” Sato finally understood: they hadn’t built transportation — they’d accidentally created a prisoner desperate to escape.",
+"During a renovation, Lydia discovered a hidden corridor behind her kitchen wall featuring portraits of unknown people wearing outdated clothing. At the corridor’s end sat a single velvet chair and a wooden camera pointed at it. Curiosity overpowered caution. When she sat, the camera flashed. Moments later, another portrait appeared on the wall — of her. Strangely, her face looked older, slightly sadder. Panicked, Lydia fled upstairs… but hung above her bed was that same new portrait. Beneath it, fresh paint spelled two unsettling words: “Welcome Back.”",
+"Jeremy, once a rising pianist, gave up music after a motorcycle accident shattered his hand. He now lived quietly repairing instruments for others who could still play. One night, a teenage prodigy burst into his shop, pleading to fix her cracked violin before an important audition. Despite pain and memories, Jeremy worked tirelessly through the night. When she returned successful, hugging him tightly, Jeremy cried for the first time in years. He realized he hadn’t lost music — it lived on through the lives he touched. Slowly, he placed his good hand on the piano again.",
+"Atop a craggy Scottish cliff, Isla found a stone arch carved with Celtic runes. Local legend claimed it only opened for “true seekers.” On a dare, Isla traced the runes, whispering her deepest wish: to escape ordinary life. Mist rolled in, swirling into a solid silver doorway. With one last breath, she stepped through. The world changed instantly — skies burned red, two moons hung overhead, and distant horns echoed. Behind her, the arch crumbled to dust. Isla smiled despite her fear. This, finally, was the adventure she’d always dreamed of."]
