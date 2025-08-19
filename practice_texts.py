@@ -37,7 +37,7 @@ practice_texts = ["""
                   """
                   A strange melody floated through the abandoned carnival, 
                   luring curious wanderers toward rusty carousels, where 
-                  grinning wooden horses seemed almost alive at dusk."""
+                  grinning wooden horses seemed almost alive at dusk.""",
                   """
                   Ivy-covered statues surrounded the forgotten fountain, 
                   whispering ancient riddles into the wind whenever moonlight 
