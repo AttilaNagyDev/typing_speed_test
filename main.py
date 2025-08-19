@@ -9,9 +9,9 @@ FONT = ("Arial", 14)
 PRACTICE_TEXT_FONT = ("Arial", 24)
 RESULT_FONT = ("Arial", 18, "bold")
 
-start_time = None
-finish_time = None
 practice_text = ""
+disable_writing = None
+announce_result = None
 
 
 # ---------------------------------------------- CENTER WINDOW ON SCREEN -----------------------------------------------
@@ -33,74 +33,66 @@ def center_window(window, width, height):
 # ------------------------------------------------- TYPING SPEED TEST --------------------------------------------------
 def refresh_text():
     """Refreshes test practice text and clears textarea"""
-    global practice_text, start_time
+    global practice_text, disable_writing, announce_result
+
+    # Cancel scheduled events if they exist
+    if 'disable_writing' in globals() and disable_writing:
+        app.after_cancel(disable_writing)
+        disable_writing = None
+    if 'announce_result' in globals() and announce_result:
+        app.after_cancel(announce_result)
+        announce_result = None
 
     practice_text = random.choice(practice_texts)
-    practice_text_label.config(text=practice_text)
+    practice_text_message.config(text=practice_text)
+    practice_text_textfield.config(state="normal")
     practice_text_textfield.delete(1.0, END)
     results_label.config(text="")
-    start_time = None
 
 
 def on_first_key(event):
-    """Start timer on first keystroke in the text area"""
-    global start_time
+    """Start timer on first keystroke in the text area,
+    then after 60 seconds disables text area and calls announcement"""
+    global disable_writing, announce_result
 
-    if start_time is None:
-        start_time = time.time()
+    disable_writing = app.after(60000, lambda: practice_text_textfield.config(state="disabled"))
+    announce_result = app.after(62000, announcement)
 
 
-def finish():
-    """Stop timer"""
-    global start_time, finish_time, practice_text
+def announcement():
+    """Checks accuracy and announce result"""
+    global practice_text
 
-    # Check typing accuracy
+    # Check typing accuracy by taking the number of written words into account
     typed_words = practice_text_textfield.get(1.0, END).split()
-    practice_words = practice_text.split()
+    nr_of_typed_words = len(typed_words)
+    practice_words = practice_text.split()[:nr_of_typed_words]
     correct_words = sum(1 for a, b in zip(typed_words, practice_words) if a == b)
     accuracy = (correct_words / len(practice_words)) * 100
-
-    # Work out the writing time and format it to display
-    writing_time = None
-    if start_time is not None:
-        finish_time = time.time()
-        writing_time = finish_time - start_time
-
-    if writing_time is not None:
-
-        if writing_time > 60:
-            mins, secs = divmod(writing_time, 60)
-            results_label.config(text=f"Finished in {int(mins)}:{int(secs):02d} / Accuracy: {accuracy:.1f} %")
-        else:
-            results_label.config(text=f"Finished in {round(writing_time)} seconds / Accuracy: {accuracy:.1f} % ")
+    results_label.config(text=f"Your WPM is: {nr_of_typed_words}   Accuracy: {accuracy:.1f} % ")
 
 
 # ------------------------------------------------------ UI SETUP ------------------------------------------------------
 app = Tk()
 app.title("Typing Speed Test")
-app.config(padx=15, pady=25, bg=GREY, width=800, height=350)
+app.config(padx=10, pady=10, bg=GREY)
 app.resizable(width=False, height=False)
-center_window(app, 800, 350)
+center_window(app, 1000, 600)
 
 # Practice Text  and Text Field
-practice_text_label = Label(text="", font=PRACTICE_TEXT_FONT, background=GREY, foreground="white")
+practice_text_message = Message(text="", font=PRACTICE_TEXT_FONT, background=GREY, foreground="white", width=950)
 practice_text_textfield = Text(bg="white", fg="black", font=PRACTICE_TEXT_FONT, padx=5, pady=5, wrap="word")
-practice_text_label.place(x=340, y=30, anchor='center')
-practice_text_textfield.place(x=0, y=190, anchor='w', width=770, height=150)
+practice_text_message.place(x=0, y=0, anchor='nw')
+practice_text_textfield.place(x=5, y=395, anchor='w', width=970, height=280)
 practice_text_textfield.bind("<Key>", on_first_key)
 
 # Refresh Text Button
 refresh_text_button = Button(text="Refresh Text", command=refresh_text, font=FONT, highlightbackground=GREY)
-refresh_text_button.place(x=0, y=290, anchor='w', width=120)
-
-# Finish Button
-finish_button = Button(text="Finish", command=finish, font=FONT, highlightbackground=GREY)
-finish_button.place(x=120, y=290, anchor='w', width=120)
+refresh_text_button.place(x=5, y=560, anchor='w', width=120)
 
 # Results Label
 results_label = Label(font=RESULT_FONT, background=GREY, foreground=GREEN)
-results_label.config(text="RRR")
-results_label.place(x=250, y=290, anchor='w')
+results_label.place(x=150, y=560, anchor='w')
 
 # Load practice text when program loads
 refresh_text()
