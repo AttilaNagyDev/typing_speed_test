@@ -1,20 +1,20 @@
 from tkinter import *
 import random
-import time
+import math
 from practice_texts import practice_texts
 
 GREY = "#5C6672"
 GREEN = "#49E750"
 FONT = ("Arial", 14)
 PRACTICE_TEXT_FONT = ("Arial", 24)
-RESULT_FONT = ("Arial", 18, "bold")
-
+RESULT_FONT = ("Arial", 20, "bold")
+TIMER_FONT = ("Arial", 22, "bold")
 practice_text = ""
 disable_writing = None
 announce_result = None
+timer = "None"
 
 
-# ---------------------------------------------- CENTER WINDOW ON SCREEN -----------------------------------------------
 def center_window(window, width, height):
     """Gets screen size and positions program window in the middle of the screen"""
 
@@ -30,33 +30,51 @@ def center_window(window, width, height):
     window.geometry(f"{width}x{height}+{x}+{y}")
 
 
-# ------------------------------------------------- TYPING SPEED TEST --------------------------------------------------
+def start_timer(event):
+    countdown(60)
+    practice_text_textfield.unbind("<Key>")
+
+
+def reset_timer():
+    app.after_cancel(timer)
+    timer_label.config(text="1:00")
+
+
+def countdown(count):
+    """Counts down 60 seconds then stops the typing speed test"""
+
+    global disable_writing, announce_result
+
+    count_min = math.floor(count / 60)
+
+    count_sec = count % 60
+    if count_sec < 10:
+        count_sec = f"0{count_sec}"
+
+    timer_label.config(text=f"{count_min}:{count_sec}")  # Display the formatted time
+
+    if count > 0:
+        global timer
+        timer = app.after(1000, countdown, count - 1)
+    else:
+        practice_text_textfield.config(state="disabled")
+        announcement()
+
+
 def refresh_text():
     """Refreshes test practice text and clears textarea"""
     global practice_text, disable_writing, announce_result
 
-    # Cancel scheduled events if they exist
-    if 'disable_writing' in globals() and disable_writing:
-        app.after_cancel(disable_writing)
-        disable_writing = None
-    if 'announce_result' in globals() and announce_result:
-        app.after_cancel(announce_result)
-        announce_result = None
+    # Reset timer
+    reset_timer()
 
+    # Pick another practice text and reset app to normal
     practice_text = random.choice(practice_texts)
     practice_text_message.config(text=practice_text)
     practice_text_textfield.config(state="normal")
     practice_text_textfield.delete(1.0, END)
     results_label.config(text="")
-
-
-def on_first_key(event):
-    """Start timer on first keystroke in the text area,
-    then after 60 seconds disables text area and calls announcement"""
-    global disable_writing, announce_result
-
-    disable_writing = app.after(60000, lambda: practice_text_textfield.config(state="disabled"))
-    announce_result = app.after(62000, announcement)
+    practice_text_textfield.bind("<Key>", start_timer)
 
 
 def announcement():
@@ -84,7 +102,6 @@ practice_text_message = Message(text="", font=PRACTICE_TEXT_FONT, background=GRE
 practice_text_textfield = Text(bg="white", fg="black", font=PRACTICE_TEXT_FONT, padx=5, pady=5, wrap="word")
 practice_text_message.place(x=0, y=0, anchor='nw')
 practice_text_textfield.place(x=5, y=395, anchor='w', width=970, height=280)
-practice_text_textfield.bind("<Key>", on_first_key)
 
 # Refresh Text Button
 refresh_text_button = Button(text="Refresh Text", command=refresh_text, font=FONT, highlightbackground=GREY)
@@ -92,10 +109,13 @@ refresh_text_button.place(x=5, y=560, anchor='w', width=120)
 
 # Results Label
 results_label = Label(font=RESULT_FONT, background=GREY, foreground=GREEN)
-results_label.place(x=150, y=560, anchor='w')
+results_label.place(x=500, y=547, anchor='n')
+
+# Timer label
+timer_label = Label(text="1:00", font=TIMER_FONT, background=GREY, foreground="#FF4D4D")
+timer_label.place(x=925, y=559, anchor='w')
 
 # Load practice text when program loads
 refresh_text()
 
 app.mainloop()
-
