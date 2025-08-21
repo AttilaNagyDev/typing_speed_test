@@ -36,12 +36,6 @@ def start_timer(event):
     practice_text_textfield.unbind("<Key>")
 
 
-def reset_timer():
-    """Stops timer and resets timer label to 1:00"""
-    app.after_cancel(timer)
-    timer_label.config(text="1:00")
-
-
 def countdown(count):
     """Counts down 60 seconds then stops the typing speed test"""
 
@@ -60,6 +54,7 @@ def countdown(count):
         timer = app.after(1000, countdown, count - 1)
     else:
         practice_text_textfield.config(state="disabled")
+        timer_label.config(text="Time is up!")
         announcement()
 
 
@@ -68,7 +63,8 @@ def refresh_text():
     global practice_text, disable_writing, announce_result
 
     # Reset timer
-    reset_timer()
+    app.after_cancel(timer)
+    timer_label.config(text="1:00")
 
     # Pick another practice text and reset app to normal
     practice_text = random.choice(practice_texts)
@@ -97,25 +93,25 @@ app = Tk()
 app.title("Typing Speed Test")
 app.config(padx=10, pady=10, bg=GREY)
 app.resizable(width=False, height=False)
-center_window(app, 1000, 600)
+center_window(app, 1000, 450)
 
 # Practice Text  and Text Field
 practice_text_message = Message(text="", font=PRACTICE_TEXT_FONT, background=GREY, foreground="white", width=950)
 practice_text_textfield = Text(bg="white", fg="black", font=PRACTICE_TEXT_FONT, padx=5, pady=5, wrap="word")
 practice_text_message.place(x=0, y=0, anchor='nw')
-practice_text_textfield.place(x=5, y=395, anchor='w', width=970, height=280)
+practice_text_textfield.place(x=5, y=290, anchor='w', width=970, height=190)
 
 # Refresh Text Button
 refresh_text_button = Button(text="Refresh Text", command=refresh_text, font=FONT, highlightbackground=GREY)
-refresh_text_button.place(x=5, y=560, anchor='w', width=120)
+refresh_text_button.place(x=5, y=410, anchor='w', width=120)
 
 # Results Label
 results_label = Label(font=RESULT_FONT, background=GREY, foreground=GREEN)
-results_label.place(x=500, y=547, anchor='n')
+results_label.place(x=500, y=396, anchor='n')
 
 # Timer label
 timer_label = Label(text="1:00", font=TIMER_FONT, background=GREY, foreground="#FF4D4D")
-timer_label.place(x=925, y=559, anchor='w')
+timer_label.place(x=978, y=410, anchor='e')
 
 # Load practice text when program loads
 refresh_text()
