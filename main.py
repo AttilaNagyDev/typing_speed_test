@@ -31,11 +31,13 @@ def center_window(window, width, height):
 
 
 def start_timer(event):
+    """Starts countdown and unbinds keys from activating timer again"""
     countdown(60)
     practice_text_textfield.unbind("<Key>")
 
 
 def reset_timer():
+    """Stops timer and resets timer label to 1:00"""
     app.after_cancel(timer)
     timer_label.config(text="1:00")
 
