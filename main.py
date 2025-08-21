@@ -85,12 +85,12 @@ def announcement():
     practice_words = practice_text.split()[:nr_of_typed_words]
     correct_words = sum(1 for a, b in zip(typed_words, practice_words) if a == b)
     accuracy = (correct_words / len(practice_words)) * 100
-    results_label.config(text=f"Your WPM is: {nr_of_typed_words}   Accuracy: {accuracy:.1f} % ")
+    results_label.config(text=f"Your speed is: {nr_of_typed_words} WPM   Accuracy: {accuracy:.1f} % ")
 
 
 # ------------------------------------------------------ UI SETUP ------------------------------------------------------
 app = Tk()
-app.title("Typing Speed Test")
+app.title("Typing Speed Test 2.0")
 app.config(padx=10, pady=10, bg=GREY)
 app.resizable(width=False, height=False)
 center_window(app, 1000, 450)
