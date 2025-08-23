@@ -20,11 +20,7 @@ No need for fancy-schmancy mechanical keyboards — just bring your best speed!
 
 1. Clone this repo
 2. Make sure you have Python installed
-3. Install dependencies
-    ```
-    pip install tkinter
-    ```
-4. Start the app
+3. Start the app
 
 ## 🎨 Usage
 
